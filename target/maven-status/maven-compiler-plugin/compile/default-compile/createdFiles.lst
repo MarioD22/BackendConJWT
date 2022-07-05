@@ -1,11 +1,11 @@
-com\ProyectoAP\ProyectoAP\model\capacitacion.class
-com\ProyectoAP\ProyectoAP\model\persona.class
 com\ProyectoAP\ProyectoAP\ProyectoApApplication.class
 com\ProyectoAP\ProyectoAP\repository\capacitacionRepository.class
-com\ProyectoAP\ProyectoAP\controller\personaController.class
 com\ProyectoAP\ProyectoAP\repository\hysRepository.class
 com\ProyectoAP\ProyectoAP\controller\hysController.class
-com\ProyectoAP\ProyectoAP\repository\personaRepository.class
-com\ProyectoAP\ProyectoAP\controller\capacitacionController.class
 com\ProyectoAP\ProyectoAP\model\hys.class
 com\ProyectoAP\ProyectoAP\exception\resourceNotFoundException.class
+com\ProyectoAP\ProyectoAP\model\capacitacion.class
+com\ProyectoAP\ProyectoAP\model\persona.class
+com\ProyectoAP\ProyectoAP\controller\personaController.class
+com\ProyectoAP\ProyectoAP\repository\personaRepository.class
+com\ProyectoAP\ProyectoAP\controller\capacitacionController.class
