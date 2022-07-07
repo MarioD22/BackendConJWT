@@ -20,11 +20,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/**
- *
- * @author Pc
- */
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity (prePostEnabled = true)
@@ -43,7 +41,7 @@ return new JwtTokenFilter();
 }
 
 @Bean
-public  PasswordEncoder passwordEncoder(){
+public PasswordEncoder passwordEncoder(){
 return new BCryptPasswordEncoder();
 }
 
@@ -57,7 +55,7 @@ return new BCryptPasswordEncoder();
              .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
              .and()
              .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                
+             http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
         
     }
 
@@ -65,7 +63,8 @@ return new BCryptPasswordEncoder();
     protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-
+    
+   @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
