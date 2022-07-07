@@ -1,11 +1,18 @@
 
-package com.ProyectoAP.ProyectoAP.Security.Service;
-import com.ProyectoAP.ProyectoAP.Security.Entity.Usuario;
-import com.ProyectoAP.ProyectoAP.Security.Repository.iUsuarioRepository;
+package com.ProyectoAP.ProyectoAP.security.Service;
+/*import com.ProyectoAP.ProyectoAP.security.Entity.Usuario;
+import com.ProyectoAP.ProyectoAP.security.Repository.iUsuarioRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;*/
+import com.ProyectoAP.ProyectoAP.security.Entity.Usuario;
+import com.ProyectoAP.ProyectoAP.security.Repository.iUsuarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @Service
 @Transactional

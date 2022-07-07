@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.ProyectoAP.ProyectoAP.Security.Entity;
+package com.ProyectoAP.ProyectoAP.security.Entity;
 
-import com.sun.istack.NotNull;
+/*import com.sun.istack.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -16,7 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToMany;*/
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
+
 
 /**
  *

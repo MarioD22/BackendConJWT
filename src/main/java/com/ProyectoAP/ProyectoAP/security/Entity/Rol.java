@@ -1,18 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.ProyectoAP.ProyectoAP.Security.Entity;
 
-import com.ProyectoAP.ProyectoAP.Security.Enums.RolNombre;
-import com.sun.istack.NotNull;
+package com.ProyectoAP.ProyectoAP.security.Entity;
+
+import com.ProyectoAP.ProyectoAP.security.Enums.RolNombre;
+/*import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.Id;*/
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  *

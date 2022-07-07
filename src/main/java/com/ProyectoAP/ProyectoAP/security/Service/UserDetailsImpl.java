@@ -1,8 +1,8 @@
 
-package com.ProyectoAP.ProyectoAP.Security.Service;
+package com.ProyectoAP.ProyectoAP.security.Service;
 
-import com.ProyectoAP.ProyectoAP.Security.Entity.Usuario;
-import com.ProyectoAP.ProyectoAP.Security.Entity.UsuarioPrincipal;
+import com.ProyectoAP.ProyectoAP.security.Entity.Usuario;
+import com.ProyectoAP.ProyectoAP.security.Entity.UsuarioPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

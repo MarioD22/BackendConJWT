@@ -1,22 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.ProyectoAP.ProyectoAP.Security.Dto;
+
+package com.ProyectoAP.ProyectoAP.security.Dto;
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 /**
  *
  * @author Pc
  */
 public class NuevoUsuario {
-
+    @NotBlank
     private String nombre;
+    @NotBlank
     private String nombreUsuario;
+     @Email
     private String email;
+     @NotBlank
     private String password;
     private Set<String> roles = new HashSet<>();
     

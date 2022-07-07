@@ -1,13 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.ProyectoAP.ProyectoAP.Security;
+package com.ProyectoAP.ProyectoAP.security;
 
-import com.ProyectoAP.ProyectoAP.Security.Service.UserDetailsImpl;
-import com.ProyectoAP.ProyectoAP.Security.jwt.JwtEntryPoint;
-import com.ProyectoAP.ProyectoAP.Security.jwt.JwtTokenFilter;
+/*import com.ProyectoAP.ProyectoAP.security.Service.UserDetailsImpl;
+import com.ProyectoAP.ProyectoAP.security.jwt.JwtEntryPoint;
+import com.ProyectoAP.ProyectoAP.security.jwt.JwtTokenFilter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;*/
+
+import com.ProyectoAP.ProyectoAP.security.jwt.JwtEntryPoint;
+import com.ProyectoAP.ProyectoAP.security.jwt.JwtTokenFilter;
+import com.ProyectoAP.ProyectoAP.security.Service.UserDetailsImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

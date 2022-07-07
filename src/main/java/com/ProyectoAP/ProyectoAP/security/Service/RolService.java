@@ -1,9 +1,9 @@
 
-package com.ProyectoAP.ProyectoAP.Security.Service;
+package com.ProyectoAP.ProyectoAP.security.Service;
 
-import com.ProyectoAP.ProyectoAP.Security.Entity.Rol;
-import com.ProyectoAP.ProyectoAP.Security.Enums.RolNombre;
-import com.ProyectoAP.ProyectoAP.Security.iRolRepository;
+import com.ProyectoAP.ProyectoAP.security.Entity.Rol;
+import com.ProyectoAP.ProyectoAP.security.Enums.RolNombre;
+import com.ProyectoAP.ProyectoAP.security.Repository.iRolRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
