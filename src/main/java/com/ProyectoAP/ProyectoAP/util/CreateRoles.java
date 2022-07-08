@@ -1,8 +1,8 @@
 package com.ProyectoAP.ProyectoAP.util;
 
-import com.ProyectoAP.ProyectoAP.security.Entity.Rol;    
-import com.ProyectoAP.ProyectoAP.security.Enums.RolNombre;
-import com.ProyectoAP.ProyectoAP.security.Service.RolService;
+import com.ProyectoAP.ProyectoAP.security.entity.Rol;    
+import com.ProyectoAP.ProyectoAP.security.enums.RolNombre;
+import com.ProyectoAP.ProyectoAP.security.service.RolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -20,11 +20,11 @@ public class CreateRoles implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-         Rol rolAdmin = new Rol(RolNombre.ROLE_ADMIN);
+       /** Rol rolAdmin = new Rol(RolNombre.ROLE_ADMIN);
         Rol rolUser = new Rol(RolNombre.ROLE_USER);
         rolService.save(rolAdmin);
-        rolService.save(rolUser);
-         
+        rolService.save(rolUser);**/
+      
     }
     
 }
