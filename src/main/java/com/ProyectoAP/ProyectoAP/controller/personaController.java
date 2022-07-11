@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,6 +64,7 @@ public class personaController {
 
 //crear una persona>> http://localhost:8080/api/v1/new/persona   //
     @CrossOrigin(origins = "http://localhost:4200")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new/persona")
     
     public void crearPersona(@RequestBody persona per) {
@@ -72,6 +74,7 @@ public class personaController {
 
 //Modificar una persona>> http://localhost:8080/api/v1/persona/{id}   //
    @CrossOrigin(origins = "http://localhost:4200")
+   @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/persona/{id}")
     public ResponseEntity<persona> Actualizar(@PathVariable Long id, @RequestBody persona personaDetalle) {
 
@@ -90,6 +93,7 @@ public class personaController {
 
 //Eliminar una persona>> http://localhost:8080/api/v1/persona/{id}   //
     @CrossOrigin(origins = "http://localhost:4200")
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/persona/{id}")
     public ResponseEntity<Map<String, Boolean>> eliminarPersonal(@PathVariable Long id) {
         persona perso = perRepository.findById(id)

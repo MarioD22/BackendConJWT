@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,6 +59,7 @@ public class hysController {
 
     // crear una habilidad nueva>> http://localhost:8080/api/v1/new/hys  //
     @CrossOrigin(origins = "http://localhost:4200")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new/hys")
     public void crearhys(@RequestBody hys hysNueva) {
         hysrepository.save(hysNueva);
@@ -65,6 +67,7 @@ public class hysController {
 
     //actualizar datos>> http://localhost:8080/api/v1/hys/edit/{id}//
     @CrossOrigin(origins = "http://localhost:4200")
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/hys/edit/{id}")
     public ResponseEntity<hys> Actualizar(@PathVariable Long id, @RequestBody hys hysDetalle) {
 
@@ -82,6 +85,7 @@ public class hysController {
 
     @CrossOrigin(origins = "http://localhost:4200")
 //Elimina capacitacion>> http://localhost:8080/api/v1/hys/delete/{id} //
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/hys/delete/{id}")
     public ResponseEntity<Map<String, Boolean>> eliminarHys(@PathVariable Long id) {
         hys hys = hysrepository.findById(id)

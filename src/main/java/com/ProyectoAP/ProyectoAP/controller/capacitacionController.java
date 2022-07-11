@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,6 +69,7 @@ public class capacitacionController {
      
      // crear una capacitacion>> http://localhost:8080/api/v1/new/capacitacion   //
      @CrossOrigin(origins = "http://localhost:4200")
+     @PreAuthorize("hasRole('ADMIN')")
      @PostMapping("/new/capacitacion")
       public void crearCapacitacion( @RequestBody capacitacion capacitacionNueva) {
       caRepository.save(capacitacionNueva); 
@@ -79,6 +81,7 @@ public class capacitacionController {
 //actualizar datos>> http://localhost:8080/api/v1/capacitacion/edit/{id}//
 
 @CrossOrigin(origins = "http://localhost:4200")
+@PreAuthorize("hasRole('ADMIN')")
 @PutMapping("/capacitacion/edit/{id}")
 public ResponseEntity<capacitacion> Actualizar(@PathVariable Long id, @RequestBody capacitacion capaDetalle){
 
@@ -101,6 +104,7 @@ public ResponseEntity<capacitacion> Actualizar(@PathVariable Long id, @RequestBo
 
 
 //Elimina capacitacion>> http://localhost:8080/api/v1/capacitacion/delete/{id} //
+@PreAuthorize("hasRole('ADMIN')")
 @DeleteMapping("/capacitacion/delete/{id}")
 public ResponseEntity<Map<String, Boolean>> eliminarCapacitacion(@PathVariable Long id){
      capacitacion capa = caRepository.findById(id)    
