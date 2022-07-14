@@ -36,7 +36,7 @@ public class hysController {
     @Autowired
     private hysRepository hysrepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200")
 
     //Buscar todas las habilidades >> http://localhost:8080/api/v1/hys   //
     @GetMapping("/hys")
@@ -45,7 +45,7 @@ public class hysController {
     }
 
     //Buscar una habilidad>> http://localhost:8080/api/v1/hys/findById/2   //
-    @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/hys/findById/{id}")
 
     public hys getUserByID(@PathVariable Long id) {
@@ -58,17 +58,19 @@ public class hysController {
     }
 
     // crear una habilidad nueva>> http://localhost:8080/api/v1/new/hys  //
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PreAuthorize("hasRole('ADMIN')")
+   @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/new/hys")
+    @PreAuthorize("hasRole('ADMIN')")
+   
     public void crearhys(@RequestBody hys hysNueva) {
         hysrepository.save(hysNueva);
     }
 
     //actualizar datos>> http://localhost:8080/api/v1/hys/edit/{id}//
-    @CrossOrigin(origins = "http://localhost:4200")
+  @CrossOrigin(origins = "http://localhost:4200")
+  @PutMapping("/hys/edit/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/hys/edit/{id}")
+    
     public ResponseEntity<hys> Actualizar(@PathVariable Long id, @RequestBody hys hysDetalle) {
 
         hys Habilidad = hysrepository.findById(id)
@@ -83,10 +85,12 @@ public class hysController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+  
 //Elimina capacitacion>> http://localhost:8080/api/v1/hys/delete/{id} //
-    @PreAuthorize("hasRole('ADMIN')")
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("/hys/delete/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+  
     public ResponseEntity<Map<String, Boolean>> eliminarHys(@PathVariable Long id) {
         hys hys = hysrepository.findById(id)
                 .orElseThrow(() -> new resourceNotFoundException("No existe habilidad con ese Id:" + id));

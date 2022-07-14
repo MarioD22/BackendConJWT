@@ -37,7 +37,7 @@ public class personaController {
     @Autowired
     private personaRepository perRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200")
 
     //buscar todas las pesonas>> http://localhost:8080/api/v1/persona   //
     @GetMapping("/persona")
@@ -45,7 +45,7 @@ public class personaController {
         return perRepository.findAll();
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/persona/traer/perfil")
     public Optional<persona> findPersona(){
         return perRepository.findById((long)1);
@@ -63,9 +63,10 @@ public class personaController {
     }
 
 //crear una persona>> http://localhost:8080/api/v1/new/persona   //
-    @CrossOrigin(origins = "http://localhost:4200")
-    @PreAuthorize("hasRole('ADMIN')")
+   @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/new/persona")
+    @PreAuthorize("hasRole('ADMIN')")
+   
     
     public void crearPersona(@RequestBody persona per) {
         perRepository.save(per);
@@ -73,9 +74,10 @@ public class personaController {
     }
 
 //Modificar una persona>> http://localhost:8080/api/v1/persona/{id}   //
-   @CrossOrigin(origins = "http://localhost:4200")
+ @CrossOrigin(origins = "http://localhost:4200")
+  @PutMapping("/persona/{id}")
    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/persona/{id}")
+   
     public ResponseEntity<persona> Actualizar(@PathVariable Long id, @RequestBody persona personaDetalle) {
 
         persona perso = perRepository.findById(id)
@@ -92,9 +94,10 @@ public class personaController {
     }
 
 //Eliminar una persona>> http://localhost:8080/api/v1/persona/{id}   //
-    @CrossOrigin(origins = "http://localhost:4200")
+  @CrossOrigin(origins = "http://localhost:4200")
+   @DeleteMapping("/persona/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/persona/{id}")
+   
     public ResponseEntity<Map<String, Boolean>> eliminarPersonal(@PathVariable Long id) {
         persona perso = perRepository.findById(id)
                 .orElseThrow(() -> new resourceNotFoundException("No existe persona con ese Id:" + id));

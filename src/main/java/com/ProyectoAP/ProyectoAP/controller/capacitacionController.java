@@ -36,7 +36,7 @@ public class capacitacionController {
     private capacitacionRepository caRepository;
      
      
-    @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "http://localhost:4200")
     
     //buscar todas las capacitaciones>> http://localhost:8080/api/v1/capacitacion   //
     
@@ -48,7 +48,7 @@ public class capacitacionController {
       
       
       //Buscar una capacitacion>> http://localhost:8080/api/v1/capacitacion/findById/2   //
-      @CrossOrigin(origins = "http://localhost:4200")
+         @CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/capacitacion/findById/{id}")
 	public capacitacion getUserByID(@PathVariable Long id) {
 		
@@ -69,8 +69,9 @@ public class capacitacionController {
      
      // crear una capacitacion>> http://localhost:8080/api/v1/new/capacitacion   //
      @CrossOrigin(origins = "http://localhost:4200")
-     @PreAuthorize("hasRole('ADMIN')")
      @PostMapping("/new/capacitacion")
+     @PreAuthorize("hasRole('ADMIN')")
+     
       public void crearCapacitacion( @RequestBody capacitacion capacitacionNueva) {
       caRepository.save(capacitacionNueva); 
     
@@ -81,8 +82,9 @@ public class capacitacionController {
 //actualizar datos>> http://localhost:8080/api/v1/capacitacion/edit/{id}//
 
 @CrossOrigin(origins = "http://localhost:4200")
-@PreAuthorize("hasRole('ADMIN')")
 @PutMapping("/capacitacion/edit/{id}")
+@PreAuthorize("hasRole('ADMIN')")
+
 public ResponseEntity<capacitacion> Actualizar(@PathVariable Long id, @RequestBody capacitacion capaDetalle){
 
     capacitacion capa = caRepository.findById(id)
@@ -99,13 +101,14 @@ public ResponseEntity<capacitacion> Actualizar(@PathVariable Long id, @RequestBo
 
 }   
 
-@CrossOrigin(origins = "http://localhost:4200")
+
 
 
 
 //Elimina capacitacion>> http://localhost:8080/api/v1/capacitacion/delete/{id} //
-@PreAuthorize("hasRole('ADMIN')")
+@CrossOrigin(origins = "http://localhost:4200")
 @DeleteMapping("/capacitacion/delete/{id}")
+@PreAuthorize("hasRole('ADMIN')")
 public ResponseEntity<Map<String, Boolean>> eliminarCapacitacion(@PathVariable Long id){
      capacitacion capa = caRepository.findById(id)    
       .orElseThrow(() -> new resourceNotFoundException("No existe persona con ese Id:" + id));
