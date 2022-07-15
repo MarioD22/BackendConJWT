@@ -3,10 +3,12 @@ package com.ProyectoAP.ProyectoAP.security.dto;
 import javax.validation.constraints.NotBlank;
 
 public class LoginUsuario {
-    @NotBlank
+   @NotBlank
     private String nombreUsuario;
     @NotBlank
     private String password;
+    
+    //Getter & Setter
 
     public String getNombreUsuario() {
         return nombreUsuario;

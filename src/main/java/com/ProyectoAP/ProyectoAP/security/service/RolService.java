@@ -6,22 +6,24 @@ import com.ProyectoAP.ProyectoAP.security.enums.RolNombre;
 import com.ProyectoAP.ProyectoAP.security.repository.RolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import javax.transaction.Transactional;
 
 import java.util.Optional;
+
 
 @Service
 @Transactional
 public class RolService {
 
     @Autowired
-    RolRepository rolRepository;
-
+     
+    RolRepository irolRepository;
+    
     public Optional<Rol> getByRolNombre(RolNombre rolNombre){
-        return rolRepository.findByRolNombre(rolNombre);
+        return irolRepository.findByRolNombre(rolNombre);
     }
-
+    
     public void save(Rol rol){
-        rolRepository.save(rol);
+        irolRepository.save(rol);
     }
 }

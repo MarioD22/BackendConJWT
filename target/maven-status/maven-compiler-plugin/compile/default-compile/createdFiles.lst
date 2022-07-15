@@ -25,6 +25,7 @@ com\ProyectoAP\ProyectoAP\security\entity\Rol.class
 com\ProyectoAP\ProyectoAP\security\enums\RolNombre.class
 com\ProyectoAP\ProyectoAP\util\CreateRoles.class
 com\ProyectoAP\ProyectoAP\security\dto\JwtDto.class
+com\ProyectoAP\ProyectoAP\dto\dtoCapacitacion.class
 com\ProyectoAP\ProyectoAP\security\entity\UsuarioPrincipal.class
 com\ProyectoAP\ProyectoAP\security\service\UserDetailsServiceImpl.class
 com\ProyectoAP\ProyectoAP\controller\personaController.class

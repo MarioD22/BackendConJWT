@@ -1,20 +1,17 @@
 package com.ProyectoAP.ProyectoAP.security.dto;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+
 import java.util.HashSet;
 import java.util.Set;
 
 public class NuevoUsuario {
-    @NotBlank
-    private String nombre;
-    @NotBlank
+   private String nombre;
     private String nombreUsuario;
-    @Email
     private String email;
-    @NotBlank
     private String password;
     private Set<String> roles = new HashSet<>();
+    
+    //Gettes & Setters
 
     public String getNombre() {
         return nombre;
@@ -55,4 +52,5 @@ public class NuevoUsuario {
     public void setRoles(Set<String> roles) {
         this.roles = roles;
     }
+    
 }
