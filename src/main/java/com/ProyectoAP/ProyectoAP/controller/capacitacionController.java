@@ -21,15 +21,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
 
 public class capacitacionController {
 
     @Autowired
     private capacitacionRepository caRepository;
 
-    @CrossOrigin(origins = "http://localhost:4200")
-
+    //@CrossOrigin(origins = "http://localhost:4200")//
+@CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     //buscar todas las capacitaciones>> http://localhost:8080/api/v1/capacitacion   //
     @GetMapping("/capacitacion")
     public List<capacitacion> buscarTodasLasPersonas() {
@@ -37,7 +37,7 @@ public class capacitacionController {
     }
 
     //Buscar una capacitacion>> http://localhost:8080/api/v1/capacitacion/findById/2   //
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @GetMapping("/capacitacion/findById/{id}")
     public capacitacion getUserByID(@PathVariable Long id) {
 
@@ -48,7 +48,7 @@ public class capacitacionController {
     }
 
     // crear una capacitacion>> http://localhost:8080/api/v1/new/capacitacion   //
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @PostMapping("/new/capacitacion")
     @PreAuthorize("hasRole('ADMIN')")
 
@@ -58,7 +58,7 @@ public class capacitacionController {
     }
 
 //actualizar datos>> http://localhost:8080/api/v1/capacitacion/edit/{id}//
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @PutMapping("/capacitacion/edit/{id}")
     @PreAuthorize("hasRole('ADMIN')")
 
@@ -76,7 +76,7 @@ public class capacitacionController {
     }
 
 //Elimina capacitacion>> http://localhost:8080/api/v1/capacitacion/delete/{id} //
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @DeleteMapping("/capacitacion/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Map<String, Boolean>> eliminarCapacitacion(@PathVariable Long id) {

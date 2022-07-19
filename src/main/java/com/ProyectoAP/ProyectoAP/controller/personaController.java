@@ -31,13 +31,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
 public class personaController {
 
     @Autowired
     private personaRepository perRepository;
 
-   @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
 
     //buscar todas las pesonas>> http://localhost:8080/api/v1/persona   //
     @GetMapping("/persona")
@@ -45,7 +45,7 @@ public class personaController {
         return perRepository.findAll();
     }
     
-   @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @GetMapping("/persona/traer/perfil")
     public Optional<persona> findPersona(){
         return perRepository.findById((long)1);
@@ -54,7 +54,7 @@ public class personaController {
     
 
     //buscar por ID//
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @GetMapping("/persona/{id}")
     public ResponseEntity<persona> BuscarPersonaById(@PathVariable Long id) {
         persona perso = perRepository.findById(id)
@@ -63,7 +63,7 @@ public class personaController {
     }
 
 //crear una persona>> http://localhost:8080/api/v1/new/persona   //
-   @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @PostMapping("/new/persona")
     @PreAuthorize("hasRole('ADMIN')")
    
@@ -74,7 +74,7 @@ public class personaController {
     }
 
 //Modificar una persona>> http://localhost:8080/api/v1/persona/{id}   //
- @CrossOrigin(origins = "http://localhost:4200")
+ @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
   @PutMapping("/persona/{id}")
    @PreAuthorize("hasRole('ADMIN')")
    
@@ -94,7 +94,7 @@ public class personaController {
     }
 
 //Eliminar una persona>> http://localhost:8080/api/v1/persona/{id}   //
-  @CrossOrigin(origins = "http://localhost:4200")
+  @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
    @DeleteMapping("/persona/{id}")
     @PreAuthorize("hasRole('ADMIN')")
    

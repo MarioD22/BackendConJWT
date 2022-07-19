@@ -30,13 +30,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/v1/")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
 public class hysController {
 
     @Autowired
     private hysRepository hysrepository;
 
-   @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
 
     //Buscar todas las habilidades >> http://localhost:8080/api/v1/hys   //
     @GetMapping("/hys")
@@ -45,7 +45,7 @@ public class hysController {
     }
 
     //Buscar una habilidad>> http://localhost:8080/api/v1/hys/findById/2   //
-   @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @GetMapping("/hys/findById/{id}")
 
     public hys getUserByID(@PathVariable Long id) {
@@ -58,7 +58,7 @@ public class hysController {
     }
 
     // crear una habilidad nueva>> http://localhost:8080/api/v1/new/hys  //
-   @CrossOrigin(origins = "http://localhost:4200")
+   @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @PostMapping("/new/hys")
     @PreAuthorize("hasRole('ADMIN')")
    
@@ -67,7 +67,7 @@ public class hysController {
     }
 
     //actualizar datos>> http://localhost:8080/api/v1/hys/edit/{id}//
-  @CrossOrigin(origins = "http://localhost:4200")
+  @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
   @PutMapping("/hys/edit/{id}")
     @PreAuthorize("hasRole('ADMIN')")
     
@@ -87,7 +87,7 @@ public class hysController {
 
   
 //Elimina capacitacion>> http://localhost:8080/api/v1/hys/delete/{id} //
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://proyectoap-4e60f.web.app")
     @DeleteMapping("/hys/delete/{id}")
     @PreAuthorize("hasRole('ADMIN')")
   
